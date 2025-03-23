@@ -1,0 +1,172 @@
+*{ /* Defaults */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  z-index: 0;
+}
+
+:root{
+  --background: #1f1f1f;
+  --color: #4AF626;
+}
+
+.fisheye-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: scale(1.2); /* Adjust the scale for the fisheye effect */
+  transform-origin: center;
+  filter: blur(0px); /* Optional: add blur for an interesting effect */
+}
+
+.fisheye-container::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(1.5);
+  filter: blur(10px);
+  pointer-events: none; /* To allow clicks through the fisheye effect */
+}
+
+html{
+  width: 100%;
+  height: 100%;
+}
+
+pre{
+  border-style: none !important;
+}
+
+*{ /* terminal theming */
+  border: solid;
+  border-width: 0.1vmin;
+  background: var(--background);
+  color: var(--color);
+  font-family: "Courier New", monospace;
+  text-shadow: 0 0 10px var(--color);
+}
+
+.loadingScreen{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  background: black;
+  z-index: 200;
+  border: none;
+  transition: .25s;
+}
+#loadingText{
+  opacity: .5;
+  color: var(--background);
+  background: linear-gradient(90deg, var(--color) 0%, var(--color) 40%, var(--background) 50%);
+  border-bottom: none;
+}
+#turnComputerOn{
+  width: 20vmin;
+  height: 20vmin;
+  padding: 2vmin;
+  border-radius: 100%;
+  margin: auto;
+  background-color: grey;
+  opacity: 0;
+  mask-image: url("https://cdn.glitch.global/2d451fc1-cf2f-456e-b166-2b41e6b3f3bb/power-button.svg?v=1740117489282");
+  mask-size: cover;
+  border: none;
+  transition: .25s;
+}
+#turnComputerOn:hover{
+  transform: scale(1.025);
+}
+
+.terminal{
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+.inputBar{
+  display: flex;
+  width: 100%;
+  height: 5%;
+}
+
+#terminalContent{
+  width: 100%;
+  height: 95%;
+  padding: 2vmin;
+  word-break: break-word;
+  overflow: auto;
+  scrollbar-width: none;
+}
+#terminalContent::-webkit-scrollbar { 
+    display: none;
+}
+
+.terminalDollarSign{
+  height: 100%;
+  align-content: center;
+  border-right-style: none;
+  padding-left: 10px;
+}
+#terminalInput{
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  border-left-style: none;
+}
+#terminalInput::before {
+  content: "&";
+  position: absolute;
+  left: 10px; /* 10px from the left edge */
+  top: 50%;
+  transform: translateY(-50%); /* Vertically center the & */
+  font-size: 16px; /* Adjust font size as needed */
+}
+#terminalEnter{
+  padding: 5px;
+}
+
+.crt {
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  background: linear-gradient(to top, #00000000, #00000000, #3333335F, #3333335F);
+  background-size: cover;
+  background-size: 100% 5px;
+  box-shadow: inset 0 0 7.5vmin rgba(0, 0, 0, 0.8);
+  filter: blur(.25px);
+}
+@media screen{
+  .crt {
+    animation: scanlines infinite 10s linear ;
+  }
+} 
+@keyframes scanlines {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 0 -50px;
+  }
+}
