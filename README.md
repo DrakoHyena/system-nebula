@@ -1,0 +1,15 @@
+- cellvolution
+- maybe ill give them auto generated history too lol
+- fishe: oh, so its basically dwarf fortress
+- fishe: also heres this absolutely random thing thats like exactaly what your talking about
+- oh my god thats amazing... its already been done.. not going into cellvolution
+- finishes cellvolution: hm.. how can I compete with that
+- remembers that chrome released a built-in ai to the browser behind a feature flag... I can use that to make more story...
+- thinks of old style text rpgs... makes website in that style
+- decide to have ai only do story parts bc context window is small... store core values/memories in the code... ai assisted
+- makes planet and species generator
+- terminal ui + planets.... hm space....
+- make system to discover planets... dont want to reveal all planet information on the search screen
+- What if they have to discover the details...
+- Adds research stuffs
+- lean into the space idea

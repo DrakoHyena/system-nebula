@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>System Nebula</title>
+    
+    <link rel="stylesheet" href="/style.css" />
+    <script src="/display/terminal.js" type="module" defer></script>
+  </head>
+  <body>
+    <div class="loadingScreen" id="loadingScreen">
+      <p id="loadingText">Loading...</p>
+      <button id="turnComputerOn"></button>
+    </div>
+    <div class="crt" id="crt"></div>
+    <div class="vignette"></div>
+    <div class="terminal">
+      <p id="terminalContent"></p>
+      <div class="inputBar">
+        <span class="terminalDollarSign">$</span><input id="terminalInput"><button id="terminalEnter">Enter</button>
+      </div>
+    </div>
+  </body>
+</html>
